@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Errorannex Plug-in
 Bundle-SymbolicName: edu.cmu.sei.aadl.errorannex;singleton:=true
-Bundle-Version: 1.1.6
+Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: edu.cmu.sei.aadl.errorannex.util.ErrorAnnexPlugin
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
