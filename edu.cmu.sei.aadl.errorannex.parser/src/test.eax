@@ -1,0 +1,46 @@
+-- error model type
+
+error_model myErrorModel
+features
+   Bad_Data: in out error propagation;
+   Failed, Stopped: error state; 
+   Error_Free: initial error state; 
+   Fail: error event;
+end myErrorModel;
+
+-- an implementation
+  
+error_model implementation myErrorModel.myimp
+features
+   Fail_Stop, Fail_Babling: error event refines Fail occurrence => poisson 10.5;
+   Stopped, Babbling: error state refines Failed;
+transitions
+   Error_Free -[out Fail_Stop, in No_Data]-> Stopped;
+properties
+   Occurrence => poisson 10.0e-5 applies to Fail_Stop;
+   Vote_In => mask when ((sensor1 and sensor2[no_data]) or (sensor1[no_data] and sendor3)),
+           no_data when ((sensor1[no_data] and senmsor2) or (sensor1 and senmsor2[no_data]) 
+              or (sensor1[no_data] and senmsor2[no_data])),
+           bad_data when (sensor1[no_data] or sensor2[no_data]);
+   Vote_Out => mask when ((sensor1 and sensor2[no_data]) or (sensor1[no_data] and sendor3)),
+           no_data when ((sensor1[no_data] and senmsor2) or (sensor1 and senmsor2[no_data]) 
+              or (sensor1[no_data] and senmsor2[no_data])),
+           bad_data when (sensor1[no_data] or sensor2[no_data]);
+end myErrorModel.myimp;
+
+-- voting mechanisms
+
+Vote_In => mask when ((sensor1 and sensor2[no_data]) or (sensor1[no_data] and sendor3)),
+           no_data when ((sensor1[no_data] and sensor2) or (sensor1 and sensor2[no_data]) 
+              or (sensor1[no_data] and sensor2[no_data])),
+           bad_data when (sensor1[no_data] or sensor2[no_data]);
+
+Vote_Out => mask when ((sensor1 and sensor2[no_data]) or (sensor1[no_data] and sendor3)),
+           no_data when ((sensor1[no_data] and sensor2) or (sensor1 and sensor2[no_data]) 
+              or (sensor1[no_data] and sensor2[no_data])),
+           bad_data when (sensor1[no_data] or sensor2[no_data]);
+           
+-- model and occurrence
+           
+model => my_package::myErrorModel.myimp;
+occurrence => fixed 10.0e-4 applies to Failed;         

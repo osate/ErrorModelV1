@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Errorannex Edit Plug-in
+Bundle-SymbolicName: edu.cmu.sei.aadl.errorannex.edit;singleton:=true
+Bundle-Version: 1.1.6
+Bundle-Activator: edu.cmu.sei.aadl.errorannex.provider.ErrorannexEditPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.emf.edit,
+ edu.cmu.sei.aadl.errorannex,
+ org.eclipse.core.runtime,
+ org.osate.aadl2;bundle-version="1.0.0",
+ org.osate.aadl2.edit;bundle-version="1.0.0"
+Eclipse-LazyStart: true
+Export-Package: edu.cmu.sei.aadl.errorannex.provider
+Bundle-Vendor: sei.cmu.edu

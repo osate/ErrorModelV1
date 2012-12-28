@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="PetriNet.ecore#/"
+    outputs="PetriNetXMI.xsd#/">
+  <nested inputs="PetriNet.ecore#/" outputs="PetriNetXMI.xsd#/">
+    <nested inputs="PetriNet.ecore#//OccurrenceType" outputs="PetriNetXMI.xsd#//OccurrenceType;XSDSimpleTypeDefinition">
+      <nested inputs="PetriNet.ecore#//OccurrenceType/poisson" outputs="PetriNetXMI.xsd#//OccurrenceType;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>
+      <nested inputs="PetriNet.ecore#//OccurrenceType/fixed" outputs="PetriNetXMI.xsd#//OccurrenceType;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"/>
+      <nested inputs="PetriNet.ecore#//OccurrenceType/nonstandard" outputs="PetriNetXMI.xsd#//OccurrenceType;XSDSimpleTypeDefinition/XSDEnumerationFacet=2"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//PetriNet" outputs="PetriNetXMI.xsd#//PetriNet;XSDComplexTypeDefinition">
+      <nested inputs="PetriNet.ecore#//PetriNet/toolInfo" outputs="PetriNetXMI.xsd#//PetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="PetriNet.ecore#//PetriNet/arcs" outputs="PetriNetXMI.xsd#//PetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="PetriNet.ecore#//PetriNet/namedElement" outputs="PetriNetXMI.xsd#//PetriNet;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//PetriNet" outputs="PetriNetXMI.xsd#//PetriNet;XSDElementDeclaration"/>
+    <nested inputs="PetriNet.ecore#//ToolInfo" outputs="PetriNetXMI.xsd#//ToolInfo;XSDComplexTypeDefinition=1">
+      <nested inputs="PetriNet.ecore#//ToolInfo/petriNet" outputs="PetriNetXMI.xsd#//ToolInfo;XSDComplexTypeDefinition=1/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//ToolInfo/petriNet" outputs="PetriNetXMI.xsd#//ToolInfo;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//ToolInfo" outputs="PetriNetXMI.xsd#//ToolInfo;XSDElementDeclaration=1"/>
+    <nested inputs="PetriNet.ecore#//Place" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2">
+      <nested inputs="PetriNet.ecore#//Place/InitialMarking" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2/XSDAttributeUse"/>
+      <nested inputs="PetriNet.ecore#//Place/transitionToPlace" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//Place/transitionToPlace" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="PetriNet.ecore#//Place/placeToTransition" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2/XSDAttributeUse=2"/>
+      <nested inputs="PetriNet.ecore#//Place/placeToTransition" outputs="PetriNetXMI.xsd#//Place;XSDComplexTypeDefinition=2/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//Place" outputs="PetriNetXMI.xsd#//Place;XSDElementDeclaration=2"/>
+    <nested inputs="PetriNet.ecore#//Transition" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3">
+      <nested inputs="PetriNet.ecore#//Transition/Occurrence" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+      <nested inputs="PetriNet.ecore#//Transition/NonStandardId" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//Transition/transitionToPlace" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDAttributeUse=2"/>
+      <nested inputs="PetriNet.ecore#//Transition/transitionToPlace" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="PetriNet.ecore#//Transition/placeToTransition" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDAttributeUse=3"/>
+      <nested inputs="PetriNet.ecore#//Transition/placeToTransition" outputs="PetriNetXMI.xsd#//Transition;XSDComplexTypeDefinition=3/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//Transition" outputs="PetriNetXMI.xsd#//Transition;XSDElementDeclaration=3"/>
+    <nested inputs="PetriNet.ecore#//Arc" outputs="PetriNetXMI.xsd#//Arc;XSDComplexTypeDefinition=4">
+      <nested inputs="PetriNet.ecore#//Arc/weight" outputs="PetriNetXMI.xsd#//Arc;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//Arc/petriNet" outputs="PetriNetXMI.xsd#//Arc;XSDComplexTypeDefinition=4/XSDAttributeUse=2"/>
+      <nested inputs="PetriNet.ecore#//Arc/petriNet" outputs="PetriNetXMI.xsd#//Arc;XSDComplexTypeDefinition=4/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//Arc" outputs="PetriNetXMI.xsd#//Arc;XSDElementDeclaration=4"/>
+    <nested inputs="PetriNet.ecore#//PlaceToTransition" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5">
+      <nested inputs="PetriNet.ecore#//PlaceToTransition/Inhibitor" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5/XSDAttributeUse"/>
+      <nested inputs="PetriNet.ecore#//PlaceToTransition/place" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//PlaceToTransition/place" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="PetriNet.ecore#//PlaceToTransition/transition" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5/XSDAttributeUse=2"/>
+      <nested inputs="PetriNet.ecore#//PlaceToTransition/transition" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//PlaceToTransition" outputs="PetriNetXMI.xsd#//PlaceToTransition;XSDElementDeclaration=5"/>
+    <nested inputs="PetriNet.ecore#//TransitionToPlace" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDComplexTypeDefinition=6">
+      <nested inputs="PetriNet.ecore#//TransitionToPlace/transition" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+      <nested inputs="PetriNet.ecore#//TransitionToPlace/transition" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="PetriNet.ecore#//TransitionToPlace/place" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//TransitionToPlace/place" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//TransitionToPlace" outputs="PetriNetXMI.xsd#//TransitionToPlace;XSDElementDeclaration=6"/>
+    <nested inputs="PetriNet.ecore#//NamedElement" outputs="PetriNetXMI.xsd#//NamedElement;XSDComplexTypeDefinition=7">
+      <nested inputs="PetriNet.ecore#//NamedElement/name" outputs="PetriNetXMI.xsd#//NamedElement;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+      <nested inputs="PetriNet.ecore#//NamedElement/petriNet" outputs="PetriNetXMI.xsd#//NamedElement;XSDComplexTypeDefinition=7/XSDAttributeUse=2"/>
+      <nested inputs="PetriNet.ecore#//NamedElement/petriNet" outputs="PetriNetXMI.xsd#//NamedElement;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="PetriNet.ecore#//NamedElement" outputs="PetriNetXMI.xsd#//NamedElement;XSDElementDeclaration=7"/>
+    <nested inputs="PetriNet.ecore#//PlaceorTransition" outputs="PetriNetXMI.xsd#//PlaceorTransition;XSDComplexTypeDefinition=8"/>
+    <nested inputs="PetriNet.ecore#//PlaceorTransition" outputs="PetriNetXMI.xsd#//PlaceorTransition;XSDElementDeclaration=8"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

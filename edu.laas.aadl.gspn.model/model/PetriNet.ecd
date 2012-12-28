@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="PetriNet" size="811,428" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#/" metadata="emf-1.0" initialized="true" scrolledX="-36" scrolledY="117" tag="5" key="3230303530393237206564752E6C6161732E6161646C2E6773706E2E6D6F64656C">
+  <children xsi:type="editmodel:EnumerationEditModel" name="OccurrenceType" location="543,120" size="121,102" stereotype="enumeration" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//OccurrenceType">
+    <children xsi:type="editmodel:CompartmentEditModel" size="68,54">
+      <children xsi:type="editmodel:EnumerationLiteralEditModel">
+        <model href="PetriNet.ecore#//OccurrenceType/poisson"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel">
+        <model href="PetriNet.ecore#//OccurrenceType/fixed"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationLiteralEditModel">
+        <model href="PetriNet.ecore#//OccurrenceType/nonstandard"/>
+      </children>
+    </children>
+    <model href="PetriNet.ecore#//OccurrenceType"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="PetriNet" location="119,40" size="81,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PetriNet" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.6" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="petriNet" location="10,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Arc/petriNet" attachSource="true" multiplicityLabel="//@children.1/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="petriNet" location="136,76" size="27,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="118,76" size="4,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//Arc/petriNet"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="arcs" location="88,0" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PetriNet/arcs" multiplicityLabel="//@children.1/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.0/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="arcs" location="136,94" size="15,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="119,94" size="3,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//PetriNet/arcs"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.1/@children.1" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="petriNet" location="81,14" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//ToolInfo/petriNet" attachSource="true" multiplicityLabel="//@children.1/@sourceConnections.1/@children.0/@children.0" roleLabel="//@children.1/@sourceConnections.1/@children.0/@children.1" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="207,61" size="4,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="petriNet" location="207,38" size="27,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//ToolInfo/petriNet"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="toolInfo" location="0,14" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PetriNet/toolInfo" multiplicityLabel="//@children.1/@sourceConnections.1/@children.1/@children.0" roleLabel="//@children.1/@sourceConnections.1/@children.1/@children.1" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="240,61" size="3,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="toolInfo" location="219,38" size="24,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//PetriNet/toolInfo"/>
+      </children>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.2/@children.1" sourceEnd="//@children.1/@sourceConnections.2/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="petriNet" location="75,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//NamedElement/petriNet" attachSource="true" multiplicityLabel="//@children.1/@sourceConnections.2/@children.0/@children.1" roleLabel="//@children.1/@sourceConnections.2/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="petriNet" location="201,76" size="27,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="183,76" size="4,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//NamedElement/petriNet"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="namedElement" location="4,0" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PetriNet/namedElement" multiplicityLabel="//@children.1/@sourceConnections.2/@children.1/@children.1" roleLabel="//@children.1/@sourceConnections.2/@children.1/@children.0" aggregationKind="Composition" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="namedElement" location="201,94" size="51,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="184,94" size="3,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//PetriNet/namedElement"/>
+      </children>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//PetriNet"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="ToolInfo" location="250,40" size="79,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//ToolInfo" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="PetriNet.ecore#//ToolInfo"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.1" name="TransitionToPlace" location="99,315" size="128,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//TransitionToPlace" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.3" target="//@children.5/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.3" target="//@children.4" targetEnd="//@children.3/@sourceConnections.1/@children.1" sourceEnd="//@children.3/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="transitionToPlace" location="93,0" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Place/transitionToPlace" attachSource="true" multiplicityLabel="//@children.3/@sourceConnections.1/@children.0/@children.1" roleLabel="//@children.3/@sourceConnections.1/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="transitionToPlace" location="127,299" size="58,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="199,299" size="12,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//Place/transitionToPlace"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="place" location="0,36" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//TransitionToPlace/place" multiplicityLabel="//@children.3/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.3/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="place" location="245,210" size="18,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="259,233" size="4,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//TransitionToPlace/place"/>
+      </children>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//TransitionToPlace"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.1" name="Place" location="270,190" size="123,57" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Place" runTimeClassModel="InitialMarking">
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="InitialMarking" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Place/InitialMarking">
+        <model href="PetriNet.ecore#//Place/InitialMarking"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.4" target="//@children.7/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,57" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="1,-7"/>
+      <bendpoints secondRelativeDimension="12,42" firstRelativeDimension="153,-32"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.4" target="//@children.5" targetEnd="//@children.4/@sourceConnections.1/@children.1" sourceEnd="//@children.4/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="place" location="0,47" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PlaceToTransition/place" attachSource="true" multiplicityLabel="//@children.4/@sourceConnections.1/@children.0/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="place" location="245,221" size="18,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="259,244" size="4,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//PlaceToTransition/place"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="placeToTransition" location="128,22" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Place/placeToTransition" multiplicityLabel="//@children.4/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.4/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="placeToTransition" location="104,288" size="60,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="104,265" size="12,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//Place/placeToTransition"/>
+      </children>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//Place"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.4/@sourceConnections.1" name="PlaceToTransition" location="-31,259" size="128,57" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PlaceToTransition" runTimeClassModel="Inhibitor">
+    <children xsi:type="editmodel:CompartmentEditModel" size="100,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="Inhibitor" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PlaceToTransition/Inhibitor">
+        <model href="PetriNet.ecore#//PlaceToTransition/Inhibitor"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.3/@sourceConnections.0" autoLocated="true" source="//@children.5" target="//@children.6" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="64,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="49,57" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" source="//@children.5" target="//@children.7" targetEnd="//@children.5/@sourceConnections.1/@children.1" sourceEnd="//@children.5/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="placeToTransition" location="64,57" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition/placeToTransition" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.1/@children.0/@children.1" roleLabel="//@children.5/@sourceConnections.1/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="placeToTransition" location="-34,323" size="60,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="40,323" size="3,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//Transition/placeToTransition"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="transition" location="74,93" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PlaceToTransition/transition" multiplicityLabel="//@children.5/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="transition" location="491,383" size="31,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="473,383" size="4,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//PlaceToTransition/transition"/>
+      </children>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//PlaceToTransition"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.1/@sourceConnections.0" name="Arc" location="41,110" size="99,57" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Arc" runTimeClassModel="weight">
+    <children xsi:type="editmodel:CompartmentEditModel" size="76,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="weight" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Arc/weight">
+        <model href="PetriNet.ecore#//Arc/weight"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="PetriNet.ecore#//Arc"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.1" name="Transition" location="410,283" size="161,93" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition" runTimeClassModel="Param,Occurrence,NonStandardId">
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,54">
+      <children xsi:type="editmodel:AttributeEditModel" name="NonStandardId" location="10,70" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition/NonStandardId">
+        <model href="PetriNet.ecore#//Transition/NonStandardId"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="Occurrence" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition/Occurrence">
+        <model href="PetriNet.ecore#//Transition/Occurrence"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="Param" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition/Param">
+        <model href="PetriNet.ecore#//Transition/Param"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.4/@sourceConnections.0" autoLocated="true" source="//@children.7" target="//@children.9" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="63,29" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" source="//@children.7" target="//@children.3" targetEnd="//@children.7/@sourceConnections.1/@children.1" sourceEnd="//@children.7/@sourceConnections.1/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="transition" location="0,46" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//TransitionToPlace/transition" attachSource="true" multiplicityLabel="//@children.7/@sourceConnections.1/@children.0/@children.1" roleLabel="//@children.7/@sourceConnections.1/@children.0/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="transition" location="372,313" size="31,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1" location="399,336" size="4,9" fontInfo="Arial-8-0" anchorKind="FirstPart"/>
+        <model href="PetriNet.ecore#//TransitionToPlace/transition"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="transitionToPlace" location="128,14" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//Transition/transitionToPlace" multiplicityLabel="//@children.7/@sourceConnections.1/@children.1/@children.1" roleLabel="//@children.7/@sourceConnections.1/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name="transitionToPlace" location="234,313" size="58,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="234,336" size="3,9" fontInfo="Arial-8-0" anchorKind="LastPart"/>
+        <model href="PetriNet.ecore#//Transition/transitionToPlace"/>
+      </children>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//Transition"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.9/@sourceConnections.0 //@children.1/@sourceConnections.2" name="NamedElement" location="190,110" size="116,57" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//NamedElement" runTimeClassModel="name">
+    <children xsi:type="editmodel:CompartmentEditModel" size="85,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="name" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//NamedElement/name">
+        <model href="PetriNet.ecore#//NamedElement/name"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="PetriNet.ecore#//NamedElement"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="PlaceorTransition" location="360,124" size="127,29" id="platform:/resource/edu.laas.aadl.gspn.model/model/PetriNet.ecore#//PlaceorTransition" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" source="//@children.9" target="//@children.8" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,11" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="116,24"/>
+    </sourceConnections>
+    <model href="PetriNet.ecore#//PlaceorTransition"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="PetriNet.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

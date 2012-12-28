@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="errorannexAObject" size="1577,807" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#/" metadata="emf-1.0" initialized="true" tag="5" key="3230303530393237206564752E657261752E6161646C2E6572726F72616E6E6578">
+  <children xsi:type="editmodel:ClassEditModel" name="BooleanErrorExpression" location="857,318" size="195,75" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//BooleanErrorExpression" runTimeClassModel="type,numericLiteral">
+    <children xsi:type="editmodel:CompartmentEditModel" size="163,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="numericLiteral" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//BooleanErrorExpression/numericLiteral">
+        <model href="errorannex.ecore#//BooleanErrorExpression/numericLiteral"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="type" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//BooleanErrorExpression/type">
+        <model href="errorannex.ecore#//BooleanErrorExpression/type"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.0" target="//@children.7/@sourceConnections.0" targetEnd="//@children.0/@sourceConnections.0/@children.1" sourceEnd="//@children.0/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="97,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-167,0"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//BooleanErrorExpression"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorPropagationRule" location="603,318" size="204,75" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorPropagationRule" runTimeClassModel="mask,errorPropagationIdentifier">
+    <children xsi:type="editmodel:CompartmentEditModel" size="181,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="errorPropagationIdentifier" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorPropagationRule/errorPropagationIdentifier">
+        <model href="errorannex.ecore#//ErrorPropagationRule/errorPropagationIdentifier"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="mask" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorPropagationRule/mask">
+        <model href="errorannex.ecore#//ErrorPropagationRule/mask"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.1" target="//@children.7/@sourceConnections.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-171,-20" attachSource="true"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorPropagationRule"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorProperties" location="230,180" size="138,29" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorProperties" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.2" target="//@children.7/@sourceConnections.0" targetEnd="//@children.2/@sourceConnections.0/@children.1" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-68,0"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorProperties"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorSourceName" location="313,318" size="240,75" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorSourceName" runTimeClassModel="errorStateOrPropagationName,componentNameOrFeatureName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="217,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="componentNameOrFeatureName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorSourceName/componentNameOrFeatureName">
+        <model href="errorannex.ecore#//ErrorSourceName/componentNameOrFeatureName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="errorStateOrPropagationName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorSourceName/errorStateOrPropagationName">
+        <model href="errorannex.ecore#//ErrorSourceName/errorStateOrPropagationName"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.3" target="//@children.7/@sourceConnections.0" targetEnd="//@children.3/@sourceConnections.0/@children.1" sourceEnd="//@children.3/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="120,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-314,-79" attachSource="true"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorSourceName"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorStateMappingRule" location="1102,318" size="252,57" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorStateMappingRule" runTimeClassModel="componentErrorStateIdentifier">
+    <children xsi:type="editmodel:CompartmentEditModel" size="229,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="componentErrorStateIdentifier" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorStateMappingRule/componentErrorStateIdentifier">
+        <model href="errorannex.ecore#//ErrorStateMappingRule/componentErrorStateIdentifier"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.4" target="//@children.7/@sourceConnections.0" targetEnd="//@children.4/@sourceConnections.0/@children.1" sourceEnd="//@children.4/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="126,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-312,0"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorStateMappingRule"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorTransition" location="60,318" size="213,129" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition" runTimeClassModel="transitionTriggerName,transitionActionName,activationTrigger,originName,destinationName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="190,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="activationTrigger" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition/activationTrigger">
+        <model href="errorannex.ecore#//ErrorTransition/activationTrigger"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="destinationName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition/destinationName">
+        <model href="errorannex.ecore#//ErrorTransition/destinationName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="originName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition/originName">
+        <model href="errorannex.ecore#//ErrorTransition/originName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="transitionActionName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition/transitionActionName">
+        <model href="errorannex.ecore#//ErrorTransition/transitionActionName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="transitionTriggerName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransition/transitionTriggerName">
+        <model href="errorannex.ecore#//ErrorTransition/transitionTriggerName"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.5" target="//@children.7/@sourceConnections.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="106,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="208,0" attachSource="true"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorTransition"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorTransitions" location="480,180" size="142,29" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorTransitions" runTimeClassModel="">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.6" target="//@children.7/@sourceConnections.0" targetEnd="//@children.6/@sourceConnections.0/@children.1" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="71,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-23,0"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorTransitions"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorModelProperty" location="750,180" size="168,57" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorModelProperty" runTimeClassModel="appliesToName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="145,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="appliesToName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorModelProperty/appliesToName">
+        <model href="errorannex.ecore#//ErrorModelProperty/appliesToName"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" targetConnections="//@children.8/@sourceConnections.0 //@children.9/@sourceConnections.0 //@children.6/@sourceConnections.0 //@children.1/@sourceConnections.0 //@children.3/@sourceConnections.0 //@children.0/@sourceConnections.0 //@children.4/@sourceConnections.0 //@children.2/@sourceConnections.0 //@children.5/@sourceConnections.0" autoLocated="true" source="//@children.7" target="//@children.10" targetEnd="//@children.7/@sourceConnections.0/@children.1" sourceEnd="//@children.7/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="84,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="69,57" anchorKind="FixedAtEdge"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorModelProperty"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ErrorGuard" location="990,180" size="205,57" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorGuard" runTimeClassModel="appliesToFeatureName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="182,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="appliesToFeatureName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//ErrorGuard/appliesToFeatureName">
+        <model href="errorannex.ecore#//ErrorGuard/appliesToFeatureName"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.8" target="//@children.7/@sourceConnections.0" targetEnd="//@children.8/@sourceConnections.0/@children.1" sourceEnd="//@children.8/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-314,36"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//ErrorGuard"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="OccurrenceProperty" location="1353,170" size="205,111" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//OccurrenceProperty" runTimeClassModel="parameterList,type,nonStandardId,eventOrPropagationName">
+    <children xsi:type="editmodel:CompartmentEditModel" size="182,72">
+      <children xsi:type="editmodel:AttributeEditModel" name="eventOrPropagationName" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//OccurrenceProperty/eventOrPropagationName">
+        <model href="errorannex.ecore#//OccurrenceProperty/eventOrPropagationName"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="nonStandardId" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//OccurrenceProperty/nonStandardId">
+        <model href="errorannex.ecore#//OccurrenceProperty/nonStandardId"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="parameterList" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//OccurrenceProperty/parameterList">
+        <model href="errorannex.ecore#//OccurrenceProperty/parameterList"/>
+      </children>
+      <children xsi:type="editmodel:AttributeEditModel" name="type" id="platform:/resource/edu.erau.aadl.errorannex/model/errorannex.ecore#//OccurrenceProperty/type">
+        <model href="errorannex.ecore#//OccurrenceProperty/type"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:GeneralizationEditModel" autoLocated="true" source="//@children.9" target="//@children.7/@sourceConnections.0" targetEnd="//@children.9/@sourceConnections.0/@children.1" sourceEnd="//@children.9/@sourceConnections.0/@children.0" connectionRouterKind="GeneralizationManhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="102,0" anchorKind="FixedAtEdge" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="-59,0"/>
+    </sourceConnections>
+    <model href="errorannex.ecore#//OccurrenceProperty"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.7/@sourceConnections.0" name="AObject" location="710,50" size="138,57" id="platform:/resource/edu.cmu.sei.aadl.model/model/core.ecore#//AObject" runTimeClassModel="comment">
+    <children xsi:type="editmodel:CompartmentEditModel" size="115,18">
+      <children xsi:type="editmodel:AttributeEditModel" name="comment" id="platform:/resource/edu.cmu.sei.aadl.model/model/core.ecore#//AObject/comment">
+        <model href="../../edu.cmu.sei.aadl.model/model/core.ecore#//AObject/comment"/>
+      </children>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <model href="../../edu.cmu.sei.aadl.model/model/core.ecore#//AObject"/>
+    <classifierPreferences xsi:type="editmodel:EMFClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural"/>
+  </children>
+  <model href="errorannex.ecore#/"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" properties="wireOptions=1" autoName="false"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="10,10" gridOrigin="0,0" rulerUnit="pixel">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:EMFClassDiagramPreference" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true"/>
+</editmodel:ClassDiagramEditModel>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_02-b09 (Sun Microsystems Inc.)
+Bundle-SymbolicName: edu.laas.aadl.dependency
+Bundle-Version: 1.0.0
+Bundle-Name: Error Model Annex Dependencies
+Bundle-Vendor: LAAS-CNRS
+Eclipse-AutoStart: true
+Require-Bundle: org.eclipse.emf.ecore,
+ com.ibm.icu,
+ edu.cmu.sei.aadl.errorannex,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.osate.aadl2;bundle-version="1.0.0",
+ org.osate.ui;bundle-version="1.0.0",
+ org.osate.aadl2.modelsupport;bundle-version="1.0.0",
+ org.osate.xtext.aadl2.properties;bundle-version="1.0.0"
+Provide-Package: edu.laas.aadl.dependency
+

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.cmu.sei.aadl.errorannex/src"
+    modelPluginID="edu.cmu.sei.aadl.errorannex" templateDirectory="/JET/templates"
+    dynamicTemplates="true" modelName="Errorannex" importerID="org.eclipse.emf.importer.ecore"
+    copyrightFields="false" usedGenPackages="../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//connection ../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//property ../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//feature ../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//flow ../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//component ../../edu.cmu.sei.aadl.model/model/aadl.genmodel#//core platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>errorannex.ecore</foreignModel>
+  <genPackages prefix="Errorannex" basePackage="edu.cmu.sei.aadl" ecorePackage="errorannex.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="errorannex.ecore#//DistributionName">
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DistributionName/poisson"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DistributionName/fixed"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DistributionName/nonstandard"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="errorannex.ecore#//DescriptorName">
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/none"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/working"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/down_one"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/down_two"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/down_three"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//DescriptorName/down_four"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="errorannex.ecore#//BooleanExpressionType">
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/not"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/and"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/or"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/ormore"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/orless"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/others"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//BooleanExpressionType/errorsourcename"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="errorannex.ecore#//TriggerType">
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//TriggerType/Activate"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//TriggerType/Deactivate"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="errorannex.ecore#//ModelSelectionType">
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//ModelSelectionType/Abstract"/>
+      <genEnumLiterals ecoreEnumLiteral="errorannex.ecore#//ModelSelectionType/Derived"/>
+    </genEnums>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorModelType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelType/features"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorModelFeature">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelFeature/occurrenceProperty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorModelFeature/details"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorEvent"/>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorState/initial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorState/inactive"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorState/descriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorState/fmeaShow"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorPropagation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorPropagation/in"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorPropagation/out"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorModelImplementation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelImplementation/errorModelType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelImplementation/errorTransitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelImplementation/errorProperties"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorTransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorTransition/origin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorTransition/destination"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorTransition/transitionAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorTransition/activationTrigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorTransition/transitionTrigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorTransition/originName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorTransition/destinationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorTransition/transitionActionName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorTransition/transitionTriggerName"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//BooleanErrorExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//BooleanErrorExpression/containedExpressions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//BooleanErrorExpression/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//BooleanErrorExpression/errorSourceName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//BooleanErrorExpression/numericLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorAnnexLibrary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorAnnexLibrary/errorModelClassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorAnnexSubClause">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorAnnexSubClause/errorModelProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorPropagationRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorPropagationRule/mask"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorPropagationRule/errorExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorPropagationRule/errorPropagationIdentifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorPropagationRule/errorPropagation"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//OccurrenceProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//OccurrenceProperty/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//OccurrenceProperty/nonStandardId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//OccurrenceProperty/parameterList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//OccurrenceProperty/eventOrPropagationName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//OccurrenceProperty/appliesToErrorEventOrPropagation"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ComponentErrorModelProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ComponentErrorModelProperty/packageIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ComponentErrorModelProperty/errorModelTypeIdentifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ComponentErrorModelProperty/errorModelImplementationIdentifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ComponentErrorModelProperty/errorModelClassifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ComponentErrorModelProperty/inplaceErrorModelType"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ReportErrorProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ReportErrorProperty/stateAndPropagationList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ReportErrorProperty/errorStateOrPropagation"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//InErrorPropagationGuard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//InErrorPropagationGuard/errorPropagationRule"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//PortEventGuard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//PortEventGuard/errorExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorSourceName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorSourceName/componentNameOrFeatureName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorSourceName/errorStateOrPropagationName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorSourceName/errorStateOrPropagation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorSourceName/subcomponentOrFeature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorSourceName/subcomponentName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorSourceName/contextSubcomponent"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//DerivedErrorStateMappingGuard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//DerivedErrorStateMappingGuard/errorStateMappingRule"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorStateMappingRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorStateMappingRule/componentErrorStateIdentifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorStateMappingRule/errorExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorStateMappingRule/errorState"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorStateOrPropagation"/>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorTransitions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorTransitions/errorTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ErrorProperties">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorProperties/occurrenceProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ModelHierarchyProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ModelHierarchyProperty/errorModelSelection"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorModelProperty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorModelProperty/appliesTo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorModelProperty/appliesToName"/>
+    </genClasses>
+    <genClasses ecoreClass="errorannex.ecore#//ModeTransitionGuard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//ModeTransitionGuard/errorExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ModeTransitionGuard/appliesToFeatureContextName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ModeTransitionGuard/appliesToFeatureContext"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ModeTransitionGuard/appliesToModeTransition"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorModelClassifier"/>
+    <genClasses ecoreClass="errorannex.ecore#//OutErrorPropagationGuard">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference errorannex.ecore#//OutErrorPropagationGuard/errorPropagationRule"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorEventOrPropagation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorEventOrPropagation/fmeaFailure"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="errorannex.ecore#//ErrorGuard">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute errorannex.ecore#//ErrorGuard/appliesToFeatureName"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference errorannex.ecore#//ErrorGuard/appliesToFeature"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

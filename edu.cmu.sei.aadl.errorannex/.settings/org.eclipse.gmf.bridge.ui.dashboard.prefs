@@ -1,0 +1,8 @@
+#Sat Dec 03 08:10:18 EST 2011
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.genmodel
+gmf_dashboard/domainModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.ecore
+gmf_dashboard/generationModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/edu.cmu.sei.aadl.errorannex/model/errorannex.gmftool
