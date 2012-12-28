@@ -17,6 +17,6 @@ Require-Bundle: org.eclipse.ui,
 Provide-Package: laas.aadl.aadl2gspn,laas.aadl.aadl2gspn.actions
 Bundle-ManifestVersion: 2
 Export-Package: laas.aadl.aadl2gspn,laas.aadl.aadl2gspn.actions
-Bundle-ClassPath: lib/com.ice.tar_1.0.0.jar,
+Bundle-ClassPath: etc/tar.jar,
  .
 
