@@ -9,7 +9,7 @@
     <relativePath>../../core/org.osate.build.main/pom.xml</relativePath>
   </parent>
   <groupId>org.osate</groupId>
-  <artifactId>edu.laas.aadl.dependency3</artifactId>
+  <artifactId>edu.laas.aadl.dependency</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>
