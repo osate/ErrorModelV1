@@ -2,7 +2,8 @@
 <feature
       id="edu.cmu.sei.aadl.errorannex.feature"
       label="Error Model Annex for OSATE2"
-      version="2.0.0.qualifier">
+      version="2.0.0.qualifier"
+      plugin="org.osate.branding">
 
    <description url="http://www.example.com/description">
       [Enter Feature Description here.]
@@ -42,42 +43,42 @@
          id="edu.cmu.sei.aadl.errorannex"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="edu.cmu.sei.aadl.errorannex.edit"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="edu.cmu.sei.aadl.errorannex.parser"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="edu.laas.aadl.aadl2gspn"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="edu.laas.aadl.dependency"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
    <plugin
          id="edu.laas.aadl.gspn.model"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="1.0.0.qualifier"
          unpack="false"/>
 
 </feature>
