@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension 
+   		id="EAParser"
+   		name="EAP"
+   		point="org.osate.annexsupport.parser">
+         <parser 	
+         	annexName="Error_Model"
+         	class="edu.cmu.sei.aadl.errorannex.parser.ErrorAnnexParseAction"
+         	name="Error_Model Annex Parser"
+         	id="edu.cmu.sei.aadl.errorannex.parser"/>
+   </extension>
+   <extension
+         id="EAResolver"
+         name="EAR"
+         point="org.osate.annexsupport.resolver">
+      <resolver
+            annexName="Error_Model"
+            class="edu.cmu.sei.aadl.errorannex.parser.ErrorAnnexResolverAction"
+            name="Error_Model Annex Resolver"
+            id="edu.cmu.sei.aadl.errorannex.resolver"/>
+   </extension>
+   <extension
+         id="EAUnparser"
+         name="EAU"
+         point="org.osate.annexsupport.unparser">
+      <unparser
+            annexName="Error_Model"
+            class="edu.cmu.sei.aadl.errorannex.unparser.ErrorAnnexUnparseAction"
+            name="Error_Model Annex Unparser"
+            id="edu.cmu.sei.errorannex.unparser"/>
+   </extension>
+
+   
+</plugin>
+

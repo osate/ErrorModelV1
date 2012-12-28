@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.laas.aadl.gspn.model/src"
+    modelPluginID="edu.laas.aadl.gspn.model" modelName="PetriNet" importerID="org.eclipse.emf.importer.ecore">
+  <foreignModel>PetriNet.ecore</foreignModel>
+  <genPackages prefix="PetriNet" disposableProviderFactory="true" ecorePackage="PetriNet.ecore#/">
+    <genEnums ecoreEnum="PetriNet.ecore#//OccurrenceType">
+      <genEnumLiterals ecoreEnumLiteral="PetriNet.ecore#//OccurrenceType/poisson"/>
+      <genEnumLiterals ecoreEnumLiteral="PetriNet.ecore#//OccurrenceType/fixed"/>
+      <genEnumLiterals ecoreEnumLiteral="PetriNet.ecore#//OccurrenceType/nonstandard"/>
+    </genEnums>
+    <genClasses ecoreClass="PetriNet.ecore#//PetriNet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/toolInfo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/arcs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//PetriNet/namedElement"/>
+    </genClasses>
+    <genClasses ecoreClass="PetriNet.ecore#//ToolInfo">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//ToolInfo/petriNet"/>
+    </genClasses>
+    <genClasses ecoreClass="PetriNet.ecore#//Place">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Place/InitialMarking"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//Place/transitionToPlace"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//Place/placeToTransition"/>
+    </genClasses>
+    <genClasses ecoreClass="PetriNet.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Transition/Occurrence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Transition/NonStandardId"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//Transition/transitionToPlace"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//Transition/placeToTransition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Transition/Param"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PetriNet.ecore#//Arc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Arc/weight"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//Arc/petriNet"/>
+    </genClasses>
+    <genClasses ecoreClass="PetriNet.ecore#//PlaceToTransition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//PlaceToTransition/Inhibitor"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//PlaceToTransition/place"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//PlaceToTransition/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="PetriNet.ecore#//TransitionToPlace">
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//TransitionToPlace/transition"/>
+      <genFeatures notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//TransitionToPlace/place"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PetriNet.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//NamedElement/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference PetriNet.ecore#//NamedElement/petriNet"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="PetriNet.ecore#//PlaceorTransition"/>
+  </genPackages>
+</genmodel:GenModel>

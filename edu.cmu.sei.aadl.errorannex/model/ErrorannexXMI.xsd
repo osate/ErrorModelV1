@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:aadl2="http://aadl.info/AADL/2.0" xmlns:errorannex="http://AADL/errorannex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://AADL/errorannex">
+  <xsd:import namespace="http://aadl.info/AADL/2.0" schemaLocation="aadl2.xsd"/>
+  <xsd:simpleType name="DistributionName">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="poisson"/>
+      <xsd:enumeration value="fixed"/>
+      <xsd:enumeration value="nonstandard"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BooleanExpressionType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="not"/>
+      <xsd:enumeration value="and"/>
+      <xsd:enumeration value="or"/>
+      <xsd:enumeration value="ormore"/>
+      <xsd:enumeration value="orless"/>
+      <xsd:enumeration value="others"/>
+      <xsd:enumeration value="errorsourcename"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="TriggerType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="Activate"/>
+      <xsd:enumeration value="Deactivate"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ModelSelectionType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="Abstract"/>
+      <xsd:enumeration value="Derived"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="ErrorModelType">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelClassifier">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="features" type="errorannex:ErrorModelFeature"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorModelType" type="errorannex:ErrorModelType"/>
+  <xsd:complexType abstract="true" name="ErrorModelFeature">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:NamedElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="occurrenceProperty" type="errorannex:OccurrenceProperty"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorModelFeature" type="errorannex:ErrorModelFeature"/>
+  <xsd:complexType name="ErrorEvent">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorEvent" type="errorannex:ErrorEvent"/>
+  <xsd:complexType name="ErrorState">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelFeature">
+        <xsd:attribute name="initial" type="xsd:boolean"/>
+        <xsd:attribute name="inactive" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorState" type="errorannex:ErrorState"/>
+  <xsd:complexType name="ErrorPropagation">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelFeature">
+        <xsd:attribute name="in" type="xsd:boolean"/>
+        <xsd:attribute name="out" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorPropagation" type="errorannex:ErrorPropagation"/>
+  <xsd:complexType name="ErrorModelImplementation">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelClassifier">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorModelType" type="errorannex:ErrorModelType"/>
+          <xsd:element name="errorTransitions" type="errorannex:ErrorTransitions"/>
+          <xsd:element name="errorProperties" type="errorannex:ErrorProperties"/>
+        </xsd:choice>
+        <xsd:attribute name="errorModelType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorModelImplementation" type="errorannex:ErrorModelImplementation"/>
+  <xsd:complexType name="ErrorTransition">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="activationTrigger" type="errorannex:TriggerType"/>
+          <xsd:element name="origin" type="errorannex:ErrorState"/>
+          <xsd:element name="destination" type="errorannex:ErrorState"/>
+          <xsd:element name="transitionAction" type="errorannex:ErrorPropagation"/>
+          <xsd:element name="transitionTrigger" type="errorannex:ErrorEventOrPropagation"/>
+        </xsd:choice>
+        <xsd:attribute name="origin" type="xsd:string"/>
+        <xsd:attribute name="destination" type="xsd:string"/>
+        <xsd:attribute name="transitionAction" type="xsd:string"/>
+        <xsd:attribute name="transitionTrigger" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorTransition" type="errorannex:ErrorTransition"/>
+  <xsd:complexType name="BooleanErrorExpression">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="containedExpressions" type="errorannex:BooleanErrorExpression"/>
+          <xsd:element name="errorSourceName" type="errorannex:ErrorSourceName"/>
+        </xsd:choice>
+        <xsd:attribute name="type" type="errorannex:BooleanExpressionType"/>
+        <xsd:attribute name="numericLiteral" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="BooleanErrorExpression" type="errorannex:BooleanErrorExpression"/>
+  <xsd:complexType name="ErrorAnnexLibrary">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:AnnexLibrary">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorModelClassifier" type="errorannex:ErrorModelClassifier"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorAnnexLibrary" type="errorannex:ErrorAnnexLibrary"/>
+  <xsd:complexType name="ErrorAnnexSubClause">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:AnnexSubclause">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorModelProperty" type="errorannex:ErrorModelProperty"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorAnnexSubClause" type="errorannex:ErrorAnnexSubClause"/>
+  <xsd:complexType name="ErrorPropagationRule">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorExpression" type="errorannex:BooleanErrorExpression"/>
+          <xsd:element name="errorPropagation" type="errorannex:ErrorPropagation"/>
+        </xsd:choice>
+        <xsd:attribute name="mask" type="xsd:boolean"/>
+        <xsd:attribute name="errorPropagation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorPropagationRule" type="errorannex:ErrorPropagationRule"/>
+  <xsd:complexType name="OccurrenceProperty">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="parameterList" nillable="true" type="xsd:string"/>
+          <xsd:element name="appliesToErrorEventOrPropagation" type="errorannex:ErrorEventOrPropagation"/>
+        </xsd:choice>
+        <xsd:attribute name="type" type="errorannex:DistributionName"/>
+        <xsd:attribute name="nonStandardId" type="xsd:string"/>
+        <xsd:attribute name="appliesToErrorEventOrPropagation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="OccurrenceProperty" type="errorannex:OccurrenceProperty"/>
+  <xsd:complexType name="ComponentErrorModelProperty">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorModelClassifier" type="errorannex:ErrorModelClassifier"/>
+          <xsd:element name="inplaceErrorModelType" type="errorannex:ErrorModelType"/>
+        </xsd:choice>
+        <xsd:attribute name="errorModelClassifier" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ComponentErrorModelProperty" type="errorannex:ComponentErrorModelProperty"/>
+  <xsd:complexType name="ReportErrorProperty">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorStateOrPropagation" type="errorannex:ErrorStateOrPropagation"/>
+        </xsd:choice>
+        <xsd:attribute name="errorStateOrPropagation" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ReportErrorProperty" type="errorannex:ReportErrorProperty"/>
+  <xsd:complexType name="InErrorPropagationGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorGuard">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorPropagationRule" type="errorannex:ErrorPropagationRule"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="InErrorPropagationGuard" type="errorannex:InErrorPropagationGuard"/>
+  <xsd:complexType name="PortEventGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorGuard">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorExpression" type="errorannex:BooleanErrorExpression"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PortEventGuard" type="errorannex:PortEventGuard"/>
+  <xsd:complexType name="ErrorSourceName">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorStateOrPropagationName" nillable="true" type="xsd:string"/>
+          <xsd:element name="errorStateOrPropagation" type="errorannex:ErrorStateOrPropagation"/>
+          <xsd:element name="subcomponentOrFeature" type="aadl2:NamedElement"/>
+          <xsd:element name="contextSubcomponent" type="aadl2:NamedElement"/>
+        </xsd:choice>
+        <xsd:attribute name="errorStateOrPropagation" type="xsd:string"/>
+        <xsd:attribute name="subcomponentOrFeature" type="xsd:string"/>
+        <xsd:attribute name="contextSubcomponent" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorSourceName" type="errorannex:ErrorSourceName"/>
+  <xsd:complexType name="DerivedErrorStateMappingGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorStateMappingRule" type="errorannex:ErrorStateMappingRule"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DerivedErrorStateMappingGuard" type="errorannex:DerivedErrorStateMappingGuard"/>
+  <xsd:complexType name="ErrorStateMappingRule">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorExpression" type="errorannex:BooleanErrorExpression"/>
+          <xsd:element name="errorState" type="errorannex:ErrorState"/>
+        </xsd:choice>
+        <xsd:attribute name="errorState" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorStateMappingRule" type="errorannex:ErrorStateMappingRule"/>
+  <xsd:complexType abstract="true" name="ErrorStateOrPropagation">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorStateOrPropagation" type="errorannex:ErrorStateOrPropagation"/>
+  <xsd:complexType name="ErrorTransitions">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorTransition" type="errorannex:ErrorTransition"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorTransitions" type="errorannex:ErrorTransitions"/>
+  <xsd:complexType name="ErrorProperties">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="occurrenceProperty" type="errorannex:OccurrenceProperty"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorProperties" type="errorannex:ErrorProperties"/>
+  <xsd:complexType name="ModelHierarchyProperty">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:attribute name="errorModelSelection" type="errorannex:ModelSelectionType"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ModelHierarchyProperty" type="errorannex:ModelHierarchyProperty"/>
+  <xsd:complexType abstract="true" name="ErrorModelProperty">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:Element">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="appliesTo" type="aadl2:NamedElement"/>
+        </xsd:choice>
+        <xsd:attribute name="appliesTo" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorModelProperty" type="errorannex:ErrorModelProperty"/>
+  <xsd:complexType name="ModeTransitionGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorGuard">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorExpression" type="errorannex:BooleanErrorExpression"/>
+          <xsd:element name="appliesToModeTransition" type="aadl2:ModeTransition"/>
+        </xsd:choice>
+        <xsd:attribute name="appliesToModeTransition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ModeTransitionGuard" type="errorannex:ModeTransitionGuard"/>
+  <xsd:complexType abstract="true" name="ErrorModelClassifier">
+    <xsd:complexContent>
+      <xsd:extension base="aadl2:NamedElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorModelClassifier" type="errorannex:ErrorModelClassifier"/>
+  <xsd:complexType name="OutErrorPropagationGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorGuard">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="errorPropagationRule" type="errorannex:ErrorPropagationRule"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="OutErrorPropagationGuard" type="errorannex:OutErrorPropagationGuard"/>
+  <xsd:complexType abstract="true" name="ErrorEventOrPropagation">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorEventOrPropagation" type="errorannex:ErrorEventOrPropagation"/>
+  <xsd:complexType abstract="true" name="ErrorGuard">
+    <xsd:complexContent>
+      <xsd:extension base="errorannex:ErrorModelProperty">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="appliesToFeature" type="aadl2:Feature"/>
+        </xsd:choice>
+        <xsd:attribute name="appliesToFeature" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ErrorGuard" type="errorannex:ErrorGuard"/>
+</xsd:schema>

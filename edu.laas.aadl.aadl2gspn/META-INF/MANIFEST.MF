@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.0
+Created-By: 1.5.0_02-b09 (Sun Microsystems Inc.)
+Bundle-SymbolicName: edu.laas.aadl.aadl2gspn;singleton:=true
+Bundle-Version: 1.0.0
+Bundle-Name: AADL2GSPN
+Bundle-Vendor: LAAS-CNRS
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.emf.ecore,
+ edu.laas.aadl.dependency,
+ edu.laas.aadl.gspn.model,
+ edu.cmu.sei.aadl.errorannex,
+ org.eclipse.core.runtime,
+ org.osate.aadl2;bundle-version="1.0.0",
+ org.osate.ui;bundle-version="1.0.0",
+ org.osate.aadl2.modelsupport;bundle-version="1.0.0"
+Provide-Package: laas.aadl.aadl2gspn,laas.aadl.aadl2gspn.actions
+Bundle-ManifestVersion: 2
+Export-Package: laas.aadl.aadl2gspn,laas.aadl.aadl2gspn.actions
+Bundle-ClassPath: lib/com.ice.tar_1.0.0.jar,
+ .
+

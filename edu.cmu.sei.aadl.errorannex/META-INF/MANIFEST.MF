@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Errorannex Plug-in
+Bundle-SymbolicName: edu.cmu.sei.aadl.errorannex;singleton:=true
+Bundle-Version: 1.1.6
+Bundle-Activator: edu.cmu.sei.aadl.errorannex.util.ErrorAnnexPlugin
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore,
+ org.osate.aadl2;bundle-version="1.0.0",
+ org.osate.aadl2.modelsupport;bundle-version="1.0.0"
+Eclipse-LazyStart: true
+Export-Package: edu.cmu.sei.aadl.errorannex,
+ edu.cmu.sei.aadl.errorannex.impl,
+ edu.cmu.sei.aadl.errorannex.util
+Bundle-Vendor: sei.cmu.edu

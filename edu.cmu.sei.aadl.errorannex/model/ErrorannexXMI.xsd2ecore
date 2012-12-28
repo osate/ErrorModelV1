@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xsd2ecore:XSD2EcoreMappingRoot xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd2ecore="http://www.eclipse.org/emf/2002/XSD2Ecore" inputs="errorannex.ecore#/"
+    outputs="ErrorannexXMI.xsd#/">
+  <nested inputs="errorannex.ecore#/" outputs="ErrorannexXMI.xsd#/">
+    <nested inputs="errorannex.ecore#//DistributionName" outputs="ErrorannexXMI.xsd#//DistributionName;XSDSimpleTypeDefinition">
+      <nested inputs="errorannex.ecore#//DistributionName/poisson" outputs="ErrorannexXMI.xsd#//DistributionName;XSDSimpleTypeDefinition/XSDEnumerationFacet"/>
+      <nested inputs="errorannex.ecore#//DistributionName/fixed" outputs="ErrorannexXMI.xsd#//DistributionName;XSDSimpleTypeDefinition/XSDEnumerationFacet=1"/>
+      <nested inputs="errorannex.ecore#//DistributionName/nonstandard" outputs="ErrorannexXMI.xsd#//DistributionName;XSDSimpleTypeDefinition/XSDEnumerationFacet=2"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//BooleanExpressionType" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1">
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/not" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/and" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=1"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/or" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=2"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/ormore" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=3"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/orless" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=4"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/others" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=5"/>
+      <nested inputs="errorannex.ecore#//BooleanExpressionType/errorsourcename" outputs="ErrorannexXMI.xsd#//BooleanExpressionType;XSDSimpleTypeDefinition=1/XSDEnumerationFacet=6"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//TriggerType" outputs="ErrorannexXMI.xsd#//TriggerType;XSDSimpleTypeDefinition=2">
+      <nested inputs="errorannex.ecore#//TriggerType/Activate" outputs="ErrorannexXMI.xsd#//TriggerType;XSDSimpleTypeDefinition=2/XSDEnumerationFacet"/>
+      <nested inputs="errorannex.ecore#//TriggerType/Deactivate" outputs="ErrorannexXMI.xsd#//TriggerType;XSDSimpleTypeDefinition=2/XSDEnumerationFacet=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ModelSelectionType" outputs="ErrorannexXMI.xsd#//ModelSelectionType;XSDSimpleTypeDefinition=3">
+      <nested inputs="errorannex.ecore#//ModelSelectionType/Abstract" outputs="ErrorannexXMI.xsd#//ModelSelectionType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet"/>
+      <nested inputs="errorannex.ecore#//ModelSelectionType/Derived" outputs="ErrorannexXMI.xsd#//ModelSelectionType;XSDSimpleTypeDefinition=3/XSDEnumerationFacet=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorModelType" outputs="ErrorannexXMI.xsd#//ErrorModelType;XSDComplexTypeDefinition">
+      <nested inputs="errorannex.ecore#//ErrorModelType/features" outputs="ErrorannexXMI.xsd#//ErrorModelType;XSDComplexTypeDefinition/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorModelType" outputs="ErrorannexXMI.xsd#//ErrorModelType;XSDElementDeclaration"/>
+    <nested inputs="errorannex.ecore#//ErrorModelFeature" outputs="ErrorannexXMI.xsd#//ErrorModelFeature;XSDComplexTypeDefinition=1">
+      <nested inputs="errorannex.ecore#//ErrorModelFeature/occurrenceProperty" outputs="ErrorannexXMI.xsd#//ErrorModelFeature;XSDComplexTypeDefinition=1/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorModelFeature" outputs="ErrorannexXMI.xsd#//ErrorModelFeature;XSDElementDeclaration=1"/>
+    <nested inputs="errorannex.ecore#//ErrorEvent" outputs="ErrorannexXMI.xsd#//ErrorEvent;XSDComplexTypeDefinition=2"/>
+    <nested inputs="errorannex.ecore#//ErrorEvent" outputs="ErrorannexXMI.xsd#//ErrorEvent;XSDElementDeclaration=2"/>
+    <nested inputs="errorannex.ecore#//ErrorState" outputs="ErrorannexXMI.xsd#//ErrorState;XSDComplexTypeDefinition=3">
+      <nested inputs="errorannex.ecore#//ErrorState/initial" outputs="ErrorannexXMI.xsd#//ErrorState;XSDComplexTypeDefinition=3/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorState/inactive" outputs="ErrorannexXMI.xsd#//ErrorState;XSDComplexTypeDefinition=3/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorState" outputs="ErrorannexXMI.xsd#//ErrorState;XSDElementDeclaration=3"/>
+    <nested inputs="errorannex.ecore#//ErrorPropagation" outputs="ErrorannexXMI.xsd#//ErrorPropagation;XSDComplexTypeDefinition=4">
+      <nested inputs="errorannex.ecore#//ErrorPropagation/in" outputs="ErrorannexXMI.xsd#//ErrorPropagation;XSDComplexTypeDefinition=4/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorPropagation/out" outputs="ErrorannexXMI.xsd#//ErrorPropagation;XSDComplexTypeDefinition=4/XSDAttributeUse=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorPropagation" outputs="ErrorannexXMI.xsd#//ErrorPropagation;XSDElementDeclaration=4"/>
+    <nested inputs="errorannex.ecore#//ErrorModelImplementation" outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDComplexTypeDefinition=5">
+      <nested inputs="errorannex.ecore#//ErrorModelImplementation/errorModelType"
+          outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDComplexTypeDefinition=5/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorModelImplementation/errorModelType"
+          outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ErrorModelImplementation/errorTransitions"
+          outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="errorannex.ecore#//ErrorModelImplementation/errorProperties"
+          outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDComplexTypeDefinition=5/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorModelImplementation" outputs="ErrorannexXMI.xsd#//ErrorModelImplementation;XSDElementDeclaration=5"/>
+    <nested inputs="errorannex.ecore#//ErrorTransition" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6">
+      <nested inputs="errorannex.ecore#//ErrorTransition/activationTrigger" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/origin" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/origin" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/destination" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDAttributeUse=1"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/destination" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/transitionAction" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDAttributeUse=2"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/transitionAction" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=3"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/transitionTrigger" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDAttributeUse=3"/>
+      <nested inputs="errorannex.ecore#//ErrorTransition/transitionTrigger" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDComplexTypeDefinition=6/XSDParticle/XSDModelGroup/XSDParticle=4"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorTransition" outputs="ErrorannexXMI.xsd#//ErrorTransition;XSDElementDeclaration=6"/>
+    <nested inputs="errorannex.ecore#//BooleanErrorExpression" outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDComplexTypeDefinition=7">
+      <nested inputs="errorannex.ecore#//BooleanErrorExpression/type" outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDComplexTypeDefinition=7/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//BooleanErrorExpression/numericLiteral" outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDComplexTypeDefinition=7/XSDAttributeUse=1"/>
+      <nested inputs="errorannex.ecore#//BooleanErrorExpression/containedExpressions"
+          outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//BooleanErrorExpression/errorSourceName" outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDComplexTypeDefinition=7/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//BooleanErrorExpression" outputs="ErrorannexXMI.xsd#//BooleanErrorExpression;XSDElementDeclaration=7"/>
+    <nested inputs="errorannex.ecore#//ErrorAnnexLibrary" outputs="ErrorannexXMI.xsd#//ErrorAnnexLibrary;XSDComplexTypeDefinition=8">
+      <nested inputs="errorannex.ecore#//ErrorAnnexLibrary/errorModelClassifier" outputs="ErrorannexXMI.xsd#//ErrorAnnexLibrary;XSDComplexTypeDefinition=8/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorAnnexLibrary" outputs="ErrorannexXMI.xsd#//ErrorAnnexLibrary;XSDElementDeclaration=8"/>
+    <nested inputs="errorannex.ecore#//ErrorAnnexSubClause" outputs="ErrorannexXMI.xsd#//ErrorAnnexSubClause;XSDComplexTypeDefinition=9">
+      <nested inputs="errorannex.ecore#//ErrorAnnexSubClause/errorModelProperty" outputs="ErrorannexXMI.xsd#//ErrorAnnexSubClause;XSDComplexTypeDefinition=9/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorAnnexSubClause" outputs="ErrorannexXMI.xsd#//ErrorAnnexSubClause;XSDElementDeclaration=9"/>
+    <nested inputs="errorannex.ecore#//ErrorPropagationRule" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDComplexTypeDefinition=10">
+      <nested inputs="errorannex.ecore#//ErrorPropagationRule/mask" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDComplexTypeDefinition=10/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorPropagationRule/errorExpression" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ErrorPropagationRule/errorPropagation" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDComplexTypeDefinition=10/XSDAttributeUse=1"/>
+      <nested inputs="errorannex.ecore#//ErrorPropagationRule/errorPropagation" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDComplexTypeDefinition=10/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorPropagationRule" outputs="ErrorannexXMI.xsd#//ErrorPropagationRule;XSDElementDeclaration=10"/>
+    <nested inputs="errorannex.ecore#//OccurrenceProperty" outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11">
+      <nested inputs="errorannex.ecore#//OccurrenceProperty/type" outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//OccurrenceProperty/nonStandardId" outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11/XSDAttributeUse=1"/>
+      <nested inputs="errorannex.ecore#//OccurrenceProperty/parameterList" outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//OccurrenceProperty/appliesToErrorEventOrPropagation"
+          outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11/XSDAttributeUse=2"/>
+      <nested inputs="errorannex.ecore#//OccurrenceProperty/appliesToErrorEventOrPropagation"
+          outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDComplexTypeDefinition=11/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//OccurrenceProperty" outputs="ErrorannexXMI.xsd#//OccurrenceProperty;XSDElementDeclaration=11"/>
+    <nested inputs="errorannex.ecore#//ComponentErrorModelProperty" outputs="ErrorannexXMI.xsd#//ComponentErrorModelProperty;XSDComplexTypeDefinition=12">
+      <nested inputs="errorannex.ecore#//ComponentErrorModelProperty/errorModelClassifier"
+          outputs="ErrorannexXMI.xsd#//ComponentErrorModelProperty;XSDComplexTypeDefinition=12/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ComponentErrorModelProperty/errorModelClassifier"
+          outputs="ErrorannexXMI.xsd#//ComponentErrorModelProperty;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ComponentErrorModelProperty/inplaceErrorModelType"
+          outputs="ErrorannexXMI.xsd#//ComponentErrorModelProperty;XSDComplexTypeDefinition=12/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ComponentErrorModelProperty" outputs="ErrorannexXMI.xsd#//ComponentErrorModelProperty;XSDElementDeclaration=12"/>
+    <nested inputs="errorannex.ecore#//ReportErrorProperty" outputs="ErrorannexXMI.xsd#//ReportErrorProperty;XSDComplexTypeDefinition=13">
+      <nested inputs="errorannex.ecore#//ReportErrorProperty/errorStateOrPropagation"
+          outputs="ErrorannexXMI.xsd#//ReportErrorProperty;XSDComplexTypeDefinition=13/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ReportErrorProperty/errorStateOrPropagation"
+          outputs="ErrorannexXMI.xsd#//ReportErrorProperty;XSDComplexTypeDefinition=13/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ReportErrorProperty" outputs="ErrorannexXMI.xsd#//ReportErrorProperty;XSDElementDeclaration=13"/>
+    <nested inputs="errorannex.ecore#//InErrorPropagationGuard" outputs="ErrorannexXMI.xsd#//InErrorPropagationGuard;XSDComplexTypeDefinition=14">
+      <nested inputs="errorannex.ecore#//InErrorPropagationGuard/errorPropagationRule"
+          outputs="ErrorannexXMI.xsd#//InErrorPropagationGuard;XSDComplexTypeDefinition=14/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//InErrorPropagationGuard" outputs="ErrorannexXMI.xsd#//InErrorPropagationGuard;XSDElementDeclaration=14"/>
+    <nested inputs="errorannex.ecore#//PortEventGuard" outputs="ErrorannexXMI.xsd#//PortEventGuard;XSDComplexTypeDefinition=15">
+      <nested inputs="errorannex.ecore#//PortEventGuard/errorExpression" outputs="ErrorannexXMI.xsd#//PortEventGuard;XSDComplexTypeDefinition=15/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//PortEventGuard" outputs="ErrorannexXMI.xsd#//PortEventGuard;XSDElementDeclaration=15"/>
+    <nested inputs="errorannex.ecore#//ErrorSourceName" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16">
+      <nested inputs="errorannex.ecore#//ErrorSourceName/errorStateOrPropagationName"
+          outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/errorStateOrPropagation"
+          outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/errorStateOrPropagation"
+          outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/subcomponentOrFeature" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDAttributeUse=1"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/subcomponentOrFeature" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=2"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/contextSubcomponent" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDAttributeUse=2"/>
+      <nested inputs="errorannex.ecore#//ErrorSourceName/contextSubcomponent" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDComplexTypeDefinition=16/XSDParticle/XSDModelGroup/XSDParticle=3"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorSourceName" outputs="ErrorannexXMI.xsd#//ErrorSourceName;XSDElementDeclaration=16"/>
+    <nested inputs="errorannex.ecore#//DerivedErrorStateMappingGuard" outputs="ErrorannexXMI.xsd#//DerivedErrorStateMappingGuard;XSDComplexTypeDefinition=17">
+      <nested inputs="errorannex.ecore#//DerivedErrorStateMappingGuard/errorStateMappingRule"
+          outputs="ErrorannexXMI.xsd#//DerivedErrorStateMappingGuard;XSDComplexTypeDefinition=17/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//DerivedErrorStateMappingGuard" outputs="ErrorannexXMI.xsd#//DerivedErrorStateMappingGuard;XSDElementDeclaration=17"/>
+    <nested inputs="errorannex.ecore#//ErrorStateMappingRule" outputs="ErrorannexXMI.xsd#//ErrorStateMappingRule;XSDComplexTypeDefinition=18">
+      <nested inputs="errorannex.ecore#//ErrorStateMappingRule/errorExpression" outputs="ErrorannexXMI.xsd#//ErrorStateMappingRule;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ErrorStateMappingRule/errorState" outputs="ErrorannexXMI.xsd#//ErrorStateMappingRule;XSDComplexTypeDefinition=18/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorStateMappingRule/errorState" outputs="ErrorannexXMI.xsd#//ErrorStateMappingRule;XSDComplexTypeDefinition=18/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorStateMappingRule" outputs="ErrorannexXMI.xsd#//ErrorStateMappingRule;XSDElementDeclaration=18"/>
+    <nested inputs="errorannex.ecore#//ErrorStateOrPropagation" outputs="ErrorannexXMI.xsd#//ErrorStateOrPropagation;XSDComplexTypeDefinition=19"/>
+    <nested inputs="errorannex.ecore#//ErrorStateOrPropagation" outputs="ErrorannexXMI.xsd#//ErrorStateOrPropagation;XSDElementDeclaration=19"/>
+    <nested inputs="errorannex.ecore#//ErrorTransitions" outputs="ErrorannexXMI.xsd#//ErrorTransitions;XSDComplexTypeDefinition=20">
+      <nested inputs="errorannex.ecore#//ErrorTransitions/errorTransition" outputs="ErrorannexXMI.xsd#//ErrorTransitions;XSDComplexTypeDefinition=20/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorTransitions" outputs="ErrorannexXMI.xsd#//ErrorTransitions;XSDElementDeclaration=20"/>
+    <nested inputs="errorannex.ecore#//ErrorProperties" outputs="ErrorannexXMI.xsd#//ErrorProperties;XSDComplexTypeDefinition=21">
+      <nested inputs="errorannex.ecore#//ErrorProperties/occurrenceProperty" outputs="ErrorannexXMI.xsd#//ErrorProperties;XSDComplexTypeDefinition=21/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorProperties" outputs="ErrorannexXMI.xsd#//ErrorProperties;XSDElementDeclaration=21"/>
+    <nested inputs="errorannex.ecore#//ModelHierarchyProperty" outputs="ErrorannexXMI.xsd#//ModelHierarchyProperty;XSDComplexTypeDefinition=22">
+      <nested inputs="errorannex.ecore#//ModelHierarchyProperty/errorModelSelection"
+          outputs="ErrorannexXMI.xsd#//ModelHierarchyProperty;XSDComplexTypeDefinition=22/XSDAttributeUse"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ModelHierarchyProperty" outputs="ErrorannexXMI.xsd#//ModelHierarchyProperty;XSDElementDeclaration=22"/>
+    <nested inputs="errorannex.ecore#//ErrorModelProperty" outputs="ErrorannexXMI.xsd#//ErrorModelProperty;XSDComplexTypeDefinition=23">
+      <nested inputs="errorannex.ecore#//ErrorModelProperty/appliesTo" outputs="ErrorannexXMI.xsd#//ErrorModelProperty;XSDComplexTypeDefinition=23/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorModelProperty/appliesTo" outputs="ErrorannexXMI.xsd#//ErrorModelProperty;XSDComplexTypeDefinition=23/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorModelProperty" outputs="ErrorannexXMI.xsd#//ErrorModelProperty;XSDElementDeclaration=23"/>
+    <nested inputs="errorannex.ecore#//ModeTransitionGuard" outputs="ErrorannexXMI.xsd#//ModeTransitionGuard;XSDComplexTypeDefinition=24">
+      <nested inputs="errorannex.ecore#//ModeTransitionGuard/errorExpression" outputs="ErrorannexXMI.xsd#//ModeTransitionGuard;XSDComplexTypeDefinition=24/XSDParticle/XSDModelGroup/XSDParticle"/>
+      <nested inputs="errorannex.ecore#//ModeTransitionGuard/appliesToModeTransition"
+          outputs="ErrorannexXMI.xsd#//ModeTransitionGuard;XSDComplexTypeDefinition=24/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ModeTransitionGuard/appliesToModeTransition"
+          outputs="ErrorannexXMI.xsd#//ModeTransitionGuard;XSDComplexTypeDefinition=24/XSDParticle/XSDModelGroup/XSDParticle=1"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ModeTransitionGuard" outputs="ErrorannexXMI.xsd#//ModeTransitionGuard;XSDElementDeclaration=24"/>
+    <nested inputs="errorannex.ecore#//ErrorModelClassifier" outputs="ErrorannexXMI.xsd#//ErrorModelClassifier;XSDComplexTypeDefinition=25"/>
+    <nested inputs="errorannex.ecore#//ErrorModelClassifier" outputs="ErrorannexXMI.xsd#//ErrorModelClassifier;XSDElementDeclaration=25"/>
+    <nested inputs="errorannex.ecore#//OutErrorPropagationGuard" outputs="ErrorannexXMI.xsd#//OutErrorPropagationGuard;XSDComplexTypeDefinition=26">
+      <nested inputs="errorannex.ecore#//OutErrorPropagationGuard/errorPropagationRule"
+          outputs="ErrorannexXMI.xsd#//OutErrorPropagationGuard;XSDComplexTypeDefinition=26/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//OutErrorPropagationGuard" outputs="ErrorannexXMI.xsd#//OutErrorPropagationGuard;XSDElementDeclaration=26"/>
+    <nested inputs="errorannex.ecore#//ErrorEventOrPropagation" outputs="ErrorannexXMI.xsd#//ErrorEventOrPropagation;XSDComplexTypeDefinition=27"/>
+    <nested inputs="errorannex.ecore#//ErrorEventOrPropagation" outputs="ErrorannexXMI.xsd#//ErrorEventOrPropagation;XSDElementDeclaration=27"/>
+    <nested inputs="errorannex.ecore#//ErrorGuard" outputs="ErrorannexXMI.xsd#//ErrorGuard;XSDComplexTypeDefinition=28">
+      <nested inputs="errorannex.ecore#//ErrorGuard/appliesToFeature" outputs="ErrorannexXMI.xsd#//ErrorGuard;XSDComplexTypeDefinition=28/XSDAttributeUse"/>
+      <nested inputs="errorannex.ecore#//ErrorGuard/appliesToFeature" outputs="ErrorannexXMI.xsd#//ErrorGuard;XSDComplexTypeDefinition=28/XSDParticle/XSDModelGroup/XSDParticle"/>
+    </nested>
+    <nested inputs="errorannex.ecore#//ErrorGuard" outputs="ErrorannexXMI.xsd#//ErrorGuard;XSDElementDeclaration=28"/>
+  </nested>
+</xsd2ecore:XSD2EcoreMappingRoot>

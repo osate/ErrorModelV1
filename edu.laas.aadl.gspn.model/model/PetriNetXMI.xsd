@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:PetriNet="http://PetriNet" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://PetriNet">
+  <xsd:import schemaLocation="XMI.xsd" namespace="http://www.omg.org/XMI"/>
+  <xsd:simpleType name="OccurrenceType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="poisson"/>
+      <xsd:enumeration value="fixed"/>
+      <xsd:enumeration value="nonstandard"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="PetriNet">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="toolInfo" type="PetriNet:ToolInfo"/>
+      <xsd:element name="arcs" type="PetriNet:Arc"/>
+      <xsd:element name="namedElement" type="PetriNet:NamedElement"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="PetriNet" type="PetriNet:PetriNet"/>
+  <xsd:complexType name="ToolInfo">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="petriNet" type="PetriNet:PetriNet"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="petriNet" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ToolInfo" type="PetriNet:ToolInfo"/>
+  <xsd:complexType name="Place">
+    <xsd:complexContent>
+      <xsd:extension base="PetriNet:PlaceorTransition">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="transitionToPlace" type="PetriNet:TransitionToPlace"/>
+          <xsd:element name="placeToTransition" type="PetriNet:PlaceToTransition"/>
+        </xsd:choice>
+        <xsd:attribute use="required" name="InitialMarking" type="xsd:int"/>
+        <xsd:attribute name="transitionToPlace" type="xsd:string"/>
+        <xsd:attribute name="placeToTransition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Place" type="PetriNet:Place"/>
+  <xsd:complexType name="Transition">
+    <xsd:complexContent>
+      <xsd:extension base="PetriNet:PlaceorTransition">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="transitionToPlace" type="PetriNet:TransitionToPlace"/>
+          <xsd:element name="placeToTransition" type="PetriNet:PlaceToTransition"/>
+        </xsd:choice>
+        <xsd:attribute use="required" name="Occurrence" type="PetriNet:OccurrenceType"/>
+        <xsd:attribute name="NonStandardId" type="xsd:string"/>
+        <xsd:attribute name="transitionToPlace" type="xsd:string"/>
+        <xsd:attribute name="placeToTransition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Transition" type="PetriNet:Transition"/>
+  <xsd:complexType name="Arc">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="petriNet" type="PetriNet:PetriNet"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute use="required" name="weight" type="xsd:int"/>
+    <xsd:attribute name="petriNet" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Arc" type="PetriNet:Arc"/>
+  <xsd:complexType name="PlaceToTransition">
+    <xsd:complexContent>
+      <xsd:extension base="PetriNet:Arc">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="place" type="PetriNet:Place"/>
+          <xsd:element name="transition" type="PetriNet:Transition"/>
+        </xsd:choice>
+        <xsd:attribute use="required" name="Inhibitor" type="xsd:boolean"/>
+        <xsd:attribute name="place" type="xsd:string"/>
+        <xsd:attribute name="transition" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PlaceToTransition" type="PetriNet:PlaceToTransition"/>
+  <xsd:complexType name="TransitionToPlace">
+    <xsd:complexContent>
+      <xsd:extension base="PetriNet:Arc">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+          <xsd:element name="transition" type="PetriNet:Transition"/>
+          <xsd:element name="place" type="PetriNet:Place"/>
+        </xsd:choice>
+        <xsd:attribute name="transition" type="xsd:string"/>
+        <xsd:attribute name="place" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="TransitionToPlace" type="PetriNet:TransitionToPlace"/>
+  <xsd:complexType name="NamedElement">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="petriNet" type="PetriNet:PetriNet"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute use="required" name="name" type="xsd:string"/>
+    <xsd:attribute name="petriNet" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="NamedElement" type="PetriNet:NamedElement"/>
+  <xsd:complexType name="PlaceorTransition">
+    <xsd:complexContent>
+      <xsd:extension base="PetriNet:NamedElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="PlaceorTransition" type="PetriNet:PlaceorTransition"/>
+</xsd:schema>
