@@ -5,16 +5,16 @@
       version="2.0.0.qualifier"
       plugin="org.osate.branding">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="http://www.aadl.info">
+      Provide support for Error-Model Annex version 1
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright url="http://www.aadl.info">
+      See Copyright Notice of each plug-in on aadl.info
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license url="http://www.aadl.info">
+      See AADL website for more information.
    </license>
 
    <url>
