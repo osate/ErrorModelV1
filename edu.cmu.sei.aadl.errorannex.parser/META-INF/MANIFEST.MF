@@ -8,17 +8,11 @@ Bundle-Activator: edu.cmu.sei.aadl.errorannex.parser.ParserPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Eclipse-LazyStart: true
-Require-Bundle: org.eclipse.ui.workbench,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
- edu.cmu.sei.aadl.errorannex,
- org.eclipse.jface,
+Require-Bundle: edu.cmu.sei.aadl.errorannex,
  org.osate.aadl2;bundle-version="1.0.0",
  org.osate.aadl2.modelsupport;bundle-version="1.0.0",
  org.osate.annexsupport;bundle-version="1.0.0",
  org.osate.ui;bundle-version="1.0.0",
- org.osate.xtext.aadl2.properties;bundle-version="1.0.0",
- org.eclipse.xtext;bundle-version="2.0.1",
- org.osate.workspace;bundle-version="1.0.0"
+ org.osate.xtext.aadl2.properties;bundle-version="1.0.0"
 Export-Package: edu.cmu.sei.aadl.errorannex.parser,
  edu.cmu.sei.aadl.errorannex.unparser
