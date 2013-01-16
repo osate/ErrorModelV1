@@ -207,6 +207,23 @@ public class ErrorAnnexResolver  {
 	}
 	
 	
+	public ErrorModelClassifier getErrorModelType(Subcomponent subc ){
+		ComponentClassifier cc = subc.getAllClassifier();
+		/* error model type for the component of the subcomponent */
+		ErrorModelClassifier emc = null;
+		ComponentErrorModelProperty cemp = eaxutil.getComponentErrorModelProperty(subc);
+		if (cemp == null) return null;
+		emc = cemp.getErrorModelClassifier();
+		if (emc != null){
+			return emc;
+		}
+		// has not been resolved yet (or was not resolvable)
+		// try to resolve
+		ErrorAnnexSubClause subclause = eaxutil.getErrorAnnexSubclause(cc);
+		nameResolveSubclause(subclause);
+		return cemp.getErrorModelClassifier();
+	}
+	
 	public void nameResolveSubclause(ErrorAnnexSubClause easc){
 		ComponentClassifier cc = (ComponentClassifier)easc.eContainer();
 		/* error model type for the component of the subclause */
@@ -274,7 +291,7 @@ public class ErrorAnnexResolver  {
 			ComponentClassifier mycc = cc;
 			Connection theconn = null;
 			/* first process applies to.  It is assumed to point to components or a connection */
-			// NOTE: any feature reference is kept in a separate attribute of teh appropriate guard.
+			// NOTE: any feature reference is kept in a separate attribute of the appropriate guard.
 			for (Iterator at = apnamelist.iterator(); at.hasNext();){
 				String apname = (String)at.next();
 				if (mycc instanceof ComponentImplementation){
@@ -524,20 +541,38 @@ public class ErrorAnnexResolver  {
 						}
 					}
 				} 
-				if (myemt != null){
-					// this a self reference. We can resolve the state name
-					EList states = esn.getErrorStateOrPropagationName();
-					for (Iterator it = states.iterator(); it.hasNext();){
-						String statename = (String) it.next();
-						ErrorState es = myemt.findErrorState(statename);
-						if (es != null){
-							esn.getErrorStateOrPropagation().add(es);
+				// this a self reference. We can resolve the state name
+				EList states = esn.getErrorStateOrPropagationName();
+				for (Iterator it = states.iterator(); it.hasNext();){
+					String statename = (String) it.next();
+					ErrorState es = null;
+					ErrorModelClassifier semt = null;
+					if (esn.getSubcomponentOrFeature() != null){
+						semt = getErrorModelType((Subcomponent)esn.getSubcomponentOrFeature());
+						if (semt != null) es =semt.findErrorState(statename);
+					} else if (myemt != null){
+						es =myemt.findErrorState(statename);
+					}							
+					if (es != null){
+						esn.getErrorStateOrPropagation().add(es);
+					} else {
+						if (cfname.isEmpty()){
+							// no subcomponent
+							errManager.error(esn,"State \""+statename+"\" could not be found.");
+						} else {
+							// had subcompont
+							if (semt == null){
+								// could not find model property
+								errManager.error(esn,"State \""+statename+"\" subcomponent \""+cfname+"\" could not be found due to missing MODEL property.");
+							} else {
+								errManager.error(esn,"State \""+statename+"\" of subcomponent \""+cfname+"\" could not be found.");
+							}
 						}
-						
 					}
+
 				}
 			}
 		}
 	}
-	
 }
+
