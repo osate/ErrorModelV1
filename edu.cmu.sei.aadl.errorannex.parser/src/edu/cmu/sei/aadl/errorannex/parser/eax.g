@@ -230,7 +230,7 @@ options {defaultErrorHandler=true;}
       (IN {in = true;}| OUT {out = true;} | IN OUT {in=true; out=true;}) ep:ERROR PROPAGATION
         (LCURLY
 			id1:OCCURRENCE ASSIGN  epa = occurrence_error_property_expression {epa.setLocationReference(this.getFilename(),id1.getLine());}
-      RCURLY )? 
+      (SEMI)? RCURLY )? 
       {// block assumes fList does not contain null references
       	for (int i=0; i<fList.size(); i++ ){
           ErrorPropagation prop = eaxF.createErrorPropagation();

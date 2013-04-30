@@ -477,6 +477,7 @@ public EAXParser(ParserSharedInputState state) {
 			}
 			
 			}
+			
 			match(SEMI);
 		}
 		catch (RecognitionException ex) {
@@ -671,9 +672,11 @@ public EAXParser(ParserSharedInputState state) {
 				match(ASSIGN);
 				epa=occurrence_error_property_expression();
 				epa.setLocationReference(this.getFilename(),id1.getLine());
+				match(SEMI);
 				match(RCURLY);
 				break;
 			}
+			
 			case SEMI:
 			{
 				break;
