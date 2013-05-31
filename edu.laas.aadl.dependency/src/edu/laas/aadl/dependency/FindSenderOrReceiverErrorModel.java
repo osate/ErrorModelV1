@@ -1042,14 +1042,14 @@ public class FindSenderOrReceiverErrorModel {
 					}
 					else 	
 						if(ci instanceof ConnectionInstance){
-							res = GetProperties.getActualConnectionBinding((ComponentInstance)ci);	  			
+							res = GetProperties.getActualConnectionBinding((ConnectionInstance)ci);	  			
 							if (res.size() > 0)
 								ref = res.get(0);
 						}
 					break;
 				case ComponentCategory.BUS_VALUE:
 					if(ci instanceof ConnectionInstance){
-						res = GetProperties.getActualConnectionBinding(ci);
+						res = GetProperties.getActualConnectionBinding((ConnectionInstance)ci);
 						if (res.size() > 0)
 							ref = res.get(0);
 					}
@@ -1059,7 +1059,7 @@ public class FindSenderOrReceiverErrorModel {
 					break;
 				case ComponentCategory.DEVICE_VALUE:
 					if(ci instanceof ConnectionInstance){
-						res = GetProperties.getActualConnectionBinding((ComponentInstance)ci);	  			
+						res = GetProperties.getActualConnectionBinding((ConnectionInstance)ci);	  			
 						if (res.size() > 0)
 							ref = res.get(0);
 					}
