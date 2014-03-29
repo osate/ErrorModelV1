@@ -16,7 +16,9 @@ package edu.laas.aadl.dependency;
 import java.util.Iterator;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 import org.osate.aadl2.AnnexSubclause;
+import org.osate.aadl2.Classifier;
 import org.osate.aadl2.ComponentClassifier;
 import org.osate.aadl2.ComponentImplementation;
 import org.osate.aadl2.DefaultAnnexSubclause;
@@ -27,11 +29,13 @@ import org.osate.aadl2.instance.ConnectionInstance;
 import org.osate.aadl2.instance.impl.ComponentInstanceImpl;
 import org.osate.aadl2.modelsupport.errorreporting.AnalysisErrorReporterManager;
 import org.osate.aadl2.modelsupport.modeltraversal.ForAllElement;
+import org.osate.annexsupport.AnnexUtil;
 
 import edu.cmu.sei.aadl.errorannex.ComponentErrorModelProperty;
 import edu.cmu.sei.aadl.errorannex.ErrorAnnexSubClause;
 import edu.cmu.sei.aadl.errorannex.ErrorModelClassifier;
 import edu.cmu.sei.aadl.errorannex.ErrorModelProperty;
+import edu.cmu.sei.aadl.errorannex.ErrorannexPackage;
 import edu.cmu.sei.aadl.errorannex.util.EAXUtil;
 
 /**
@@ -84,31 +88,7 @@ public class AADLDependabilityModel extends ForAllElement {
 
 		/* get the implementation of the component instance */
 		ComponentClassifier cc =  ((ComponentInstance) obj).getComponentClassifier();
-
-		/*
-		 * if there is a component implementation, search for an error annex
-		 * subclause
-		 */
-		if (cc != null && cc instanceof ComponentImplementation) {
-			ComponentImplementation cii = (ComponentImplementation)cc;
-			EList ListofAnnexes = cii.getAllAnnexSubclauses();
-			for (Iterator it = ListofAnnexes.iterator(); it.hasNext();) 
-			{
-				final AnnexSubclause annex = (AnnexSubclause) it.next();
-				if (annex instanceof DefaultAnnexSubclause)
-				{
-					if (annex.getName().equals("Error_Model"))
-						error(obj, "You need the Error Model parser before running this analysis.");
-				}
-				/*ErrorAnnexSubClauseImpl*/
-				else if (annex instanceof ErrorAnnexSubClause)
-				{
-					return (ErrorAnnexSubClause)annex;
-					
-				};
-			};
-		};
-		return null;
+		return (ErrorAnnexSubClause) AnnexUtil.getAllAnnexSubclauses(cc,ErrorannexPackage.eINSTANCE.getErrorAnnexSubClause());
 	};
 
 	/**
@@ -125,32 +105,17 @@ public class AADLDependabilityModel extends ForAllElement {
 		 * subclause
 		 */
 		if (cc != null && cc instanceof ComponentImplementation) {
-			ComponentImplementation cii = (ComponentImplementation)cc;
-			EList<AnnexSubclause> ListofAnnexes = cii.getAllAnnexSubclauses();
-			for (Iterator<AnnexSubclause> it = ListofAnnexes.iterator(); it.hasNext();) {
-				final AnnexSubclause annex =  it.next();
-				if (annex instanceof DefaultAnnexSubclause) {
-					if (annex.getName().equals("Error_Model"))
-						error(obj, "You need the Error Model parser before running this analysis.");
-				}
-				/* ErrorAnnexSubClause */
-				else if (annex instanceof ErrorAnnexSubClause) {
-					EList emps = ((ErrorAnnexSubClause) annex).getErrorModelProperty();
-					for (Iterator it1 = emps.iterator(); it1.hasNext();) {
-						ErrorModelProperty emp = (ErrorModelProperty) it1.next();
-						if (emp instanceof ComponentErrorModelProperty) {
-							return ((ComponentErrorModelProperty) emp).getErrorModelClassifier();
-
-						}
-
+			ErrorAnnexSubClause easc = (ErrorAnnexSubClause) AnnexUtil.getAllAnnexSubclauses(cc,ErrorannexPackage.eINSTANCE.getErrorAnnexSubClause());
+			if (easc != null){
+				EList emps = easc.getErrorModelProperty();
+				for (Iterator it1 = emps.iterator(); it1.hasNext();) {
+					ErrorModelProperty emp = (ErrorModelProperty) it1.next();
+					if (emp instanceof ComponentErrorModelProperty) {
+						return ((ComponentErrorModelProperty) emp).getErrorModelClassifier();
 					}
-
 				}
-				;
 			}
-			;
-		}
-		;
+		};
 		return null;
 	};
 
